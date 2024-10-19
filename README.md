@@ -1,6 +1,6 @@
 # Create Jira Issue Action
 
-This GitHub Action creates a Jira issue or sub-task with a given summary, description, type, priority, and labels. It can be triggered manually through the GitHub Actions workflow dispatch feature.
+This Action creates a Jira issue or sub-task with a given summary, description, type, priority, and labels. It can be triggered manually through the GitHub Actions workflow dispatch feature.
 
 ## Table of Contents
 
@@ -20,13 +20,13 @@ To use this action, include it in your workflow YAML file. This action requires 
 | Input                  | Description                                              | Required | Default               |
 |------------------------|----------------------------------------------------------|----------|-----------------------|
 | `project_key`          | The Jira project key                                     | Yes      |                       |
-| `issue_type`           | The type of the issue (e.g., Task, Bug, Story, Sub-task)| Yes      | `Task`                |
-| `parent_issue_key`     | The key of the parent issue if creating a Sub-task      | No       |                       |
-| `assignee`             | Assignee username (optional)                            | No       |                       |
+| `issue_type`           | The type of the issue (e.g., Task, Bug, Story, Sub-task) | Yes      | `Task`                |
+| `parent_issue_key`     | The key of the parent issue if creating a Sub-task       | No       |                       |
+| `assignee`             | Assignee username (optional)                             | No       |                       |
 | `issue_summary`        | The summary of the issue                                 | Yes      |                       |
 | `issue_description`    | The description of the issue                             | Yes      |                       |
-| `issue_priority`       | The priority of the issue (High, Medium, Low)           | Yes      | `Medium`              |
-| `issue_labels`         | Comma-separated labels for the issue                    | No       |                       |
+| `issue_priority`       | The priority of the issue (High, Medium, Low)            | Yes      | `Medium`              |
+| `issue_labels`         | Comma-separated labels for the issue                     | No       |                       |
 | `attachment_paths`     | Comma-separated paths of attachments                     | No       |                       |
 
 ## Outputs
