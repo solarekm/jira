@@ -19,9 +19,6 @@ To use this action, include it in your workflow YAML file. This action requires 
 
 | Input                  | Description                                              | Required | Default               |
 |------------------------|----------------------------------------------------------|----------|-----------------------|
-| `jira_server`          | The Jira server URL                                      | Yes      |                       |
-| `jira_username`        | The Jira username                                        | Yes      |                       |
-| `jira_api_token`       | The Jira API token                                        | Yes      |                       |
 | `project_key`          | The Jira project key                                     | Yes      |                       |
 | `issue_type`           | The type of the issue (e.g., Task, Bug, Story, Sub-task)| Yes      | `Task`                |
 | `parent_issue_key`     | The key of the parent issue if creating a Sub-task      | No       |                       |
@@ -46,18 +43,6 @@ name: Create Jira Issue
 on:
   workflow_dispatch:
     inputs:
-      jira_server:
-        description: "Jira server URL"
-        required: false
-        default: ${{ secrets.JIRA_SERVER }}
-      jira_username:
-        description: "Jira username"
-        required: false
-        default: ${{ secrets.JIRA_USERNAME }}
-      jira_api_token:
-        description: "Jira API token"
-        required: false
-        default: ${{ secrets.JIRA_API_TOKEN }}
       project_key:
         description: "Jira project key"
         required: true
@@ -111,9 +96,9 @@ jobs:
       - name: Create Jira Issue
         uses: solarekm/jira-action@v1
         with:
-          jira_server: ${{ github.event.inputs.jira_server }}
-          jira_username: ${{ github.event.inputs.jira_username }}
-          jira_api_token: ${{ github.event.inputs.jira_api_token }}
+          jira_server: ${{ secrets.JIRA_SERVER }}
+          jira_username: ${{ secrets.JIRA_USERNAME }}
+          jira_api_token: ${{ secrets.JIRA_API_TOKEN }}
           project_key: ${{ github.event.inputs.project_key }}
           issue_type: ${{ github.event.inputs.issue_type }}
           parent_issue_key: ${{ github.event.inputs.parent_issue_key }}
