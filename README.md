@@ -43,6 +43,9 @@ name: Create Jira Issue
 on:
   workflow_dispatch:
     inputs:
+      jira_server:
+        description: "Jira server URL"
+        required: true
       project_key:
         description: "Jira project key"
         required: true
@@ -96,7 +99,7 @@ jobs:
       - name: Create Jira Issue
         uses: solarekm/jira@v1
         with:
-          jira_server: ${{ secrets.JIRA_SERVER }}
+          jira_server: ${{ github.event.inputs.jira_server }}
           jira_username: ${{ secrets.JIRA_USERNAME }}
           jira_api_token: ${{ secrets.JIRA_API_TOKEN }}
           project_key: ${{ github.event.inputs.project_key }}
