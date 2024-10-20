@@ -19,6 +19,7 @@ To use this action, include it in your workflow YAML file. This action requires 
 
 | Input                  | Description                                              | Required | Default               |
 |------------------------|----------------------------------------------------------|----------|-----------------------|
+| `jira_server`          | The Jira server URL                                      | Yes      |                       |
 | `project_key`          | The Jira project key                                     | Yes      |                       |
 | `issue_type`           | The type of the issue (e.g., Task, Bug, Story, Sub-task) | Yes      | `Task`                |
 | `parent_issue_key`     | The key of the parent issue if creating a Sub-task       | No       |                       |
